@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c2le4mo3bywet"]
+
+[ext_resource type="Script" uid="uid://cwx35m6eev21r" path="res://scripts/player_hand.gd" id="1_b5n6t"]
+[ext_resource type="Texture2D" uid="uid://b3n8sis2rq37e" path="res://assets/player-hand-1.png" id="2_e6atq"]
+[ext_resource type="Texture2D" uid="uid://dr3w8m3smgfe" path="res://assets/player-hand-2.png" id="3_bfne6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2pv4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bfne6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e6atq")
+}],
+"loop": 0,
+"name": &"click",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e6atq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PlayerHand" type="Node2D" unique_id=1208691027]
+script = ExtResource("1_b5n6t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=528235391]
+sprite_frames = SubResource("SpriteFrames_o2pv4")
+animation = &"click"
+frame = 1
+frame_progress = 1.0
